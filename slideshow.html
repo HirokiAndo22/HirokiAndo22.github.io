@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+<meta charset=utf-8>
+<title>Slide Show</title>
+<meta name="description" content="安藤尋生のホームページ">
+
+<meta name=viewport content=width=device-width>
+<link media="only screen and (max-device-width:800px)" href="css/m.css" type="text/css" rel=stylesheet>
+<link media="screen and (min-device-width:801px)" href="css/p.css" type="text/css" rel=stylesheet>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script type="text/javascript">
+function slideSwitch() {var $active = $('#slideshow img.active');if ( $active.length == 0 ) $active = $('#slideshow img:last');var $next =  $active.next().length ? $active.next(): $('#slideshow img:first');$active.addClass('last-active');$next.css({opacity: 0.0}).addClass('active').animate({opacity: 1.0}, 1000, function() {$active.removeClass('active last-active');});}$(function() {setInterval( "slideSwitch()", 3000 );});
+</script>
+
+<style type ="text/css">
+#slideshow{position:relative;width:50%;}
+#slideshow img {position : absolute; size:100%; z-index : 8;opacity : 0.0;}
+#slideshow img.active {z-index:10;opacity:1.0;}
+#slideshow img.last-active {z-index:9;}
+</style>
+
+</head>
+
+<body>
+
+<table width=100%><tr><td class=page>
+</td></tr></table>
+
+<div class=block>
+<table><tr><td class=title>
+Hiroki Ando's home page
+</td></tr><tr>
+<td class=menu>
+Slide Show
+</td></tr></table>
+</div>
+
+<div align=center>
+<!--↓border=1↓はレイアウト確認用　レイアウト確認後はborder=0にする-->
+<table border=0><tr><td>
+My Favorites Items
+</td></tr><tr><td>
+
+<p id="slideshow">
+<img src="img/item01.jpg" alt="" class=active>
+<img src="img/item02.jpg" alt="">
+<img src="img/item03.jpg" alt="">
+<img src="img/item04.jpg" alt="">
+<img src="img/item05.jpg" alt="">
+</p>
+
+</td></tr></table>
+</div>
+
+<hr>
+<div align=center>
+<br>
+<a href="index.html"><big><b>HOME</b></big></a>
+<br>
+<div>
+
+</body></html>
